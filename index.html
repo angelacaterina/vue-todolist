@@ -18,13 +18,16 @@
     <div id="app">
       <img :src="image" alt="">
       <div>
-        <input type="text" name="task" value="task" v-model="newTask">
-        <button type="button" name="button">Add</button>
+        <!-- // Quando l'utente inserisce una task ha due modi per salvarla: o preme il pulsante add (button) o preme il taso Enter della tastiera (input). -->
+        <input type="text" name="task" value="task" v-model="newTask" @keyup.enter="addTask">
+        <button type="button" name="button" @click="addTask">Add</button>
       </div>
       <ul>
         <li v-for="task in tasks">
           <span>{{ task.text }}</span>
-          <i class="fas fa-times-circle"></i>
+          <!-- // Cliccando sulla "X" l'utente puó cancellare una task -->
+          <i class="fas fa-times-circle" @click="removeTask"></i>
+        </li>
       </ul>
     </div>
 

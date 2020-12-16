@@ -1,23 +1,33 @@
 // Istruzioni:
 // Create una todo list usando VueJS.
 // Potete dare sfogo alla creativitá e per quanto riguarda l'HTML e il CSS.
-// Se non sapere che fare, di seguito trovate uno screenshot.
 // Funzionalitá:
-// La nostra todo list avrá alcune tasks di default predefinite
-// L'utente puó inserire nuove tasks
-// Cliccando sulla "X" l'utente puó cancellare una task
 // Se non ci sono piu task nella lista, mostrate un messaggio tipo "Nulla da fare"
-// Quando l'utente inserisce una task ha due modi per salvarla: o preme il pulsante add o preme il taso Enter della tastiera.
 // Attenzione: l'utente non deve inserire tasks vuote ma almeno un tot di caratteri.
 let app = new Vue({
   el:'#app',
   data:{
     image : "https://www.boolean.careers/images/misc/logo.png",
     newTask: '',
+    // La nostra todo list avrá alcune tasks di default predefinite
     tasks: [
       { text: 'Do somthing' },
       { text: 'Do else' },
       { text: 'Do somthing else' }
     ]
+  },
+  methods: {
+    // L'utente puó inserire nuove tasks
+    addTask: function (){                // funzione associata: pulsante add (button) o taso Enter della tastiera (input).
+      let newText = this.newTask.trim();        //Remove whitespace from both sides of a string
+      if (newText){
+        this.tasks.push({ text: newText });     //Add a new item to the end of an array:
+        this.newTask = '';
+      }
+    },
+    // Cliccando sulla "X" l'utente puó cancellare una task
+    removeTask: function (index){
+      this.tasks.splice(index,1);               //Removes items from an array, and returns the removed item(s).
+    }
   }
-});
+})
