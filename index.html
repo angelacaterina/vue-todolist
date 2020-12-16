@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <!-- css -->
@@ -22,6 +20,7 @@
         <input type="text" name="task" value="task" v-model="newTask" @keyup.enter="addTask">
         <button type="button" name="button" @click="addTask">Add</button>
       </div>
+      <h3>Todo List</h3>
       <ul>
         <li v-for="task, index in tasks">
           <span>{{ task.text}}</span>
@@ -29,6 +28,9 @@
           <span @click="removeTask(index)"><i class="fas fa-times-circle" ></i></span>
         </li>
       </ul>
+
+    <!-- <p> {{meggase}}</p> -->
+
     </div>
 
 

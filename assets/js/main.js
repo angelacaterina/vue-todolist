@@ -1,9 +1,9 @@
 // Istruzioni:
 // Create una todo list usando VueJS.
-// Potete dare sfogo alla creativitá e per quanto riguarda l'HTML e il CSS.
+
 // Funzionalitá:
-// Se non ci sono piu task nella lista, mostrate un messaggio tipo "Nulla da fare"
 // Attenzione: l'utente non deve inserire tasks vuote ma almeno un tot di caratteri.
+
 let app = new Vue({
   el:'#app',
   data:{
@@ -14,7 +14,9 @@ let app = new Vue({
       { text: 'Do somthing' },
       { text: 'Do else' },
       { text: 'Do somthing else' }
-    ]
+    ],
+    // Se non ci sono piu task nella lista, mostrate un messaggio tipo "Nulla da fare"
+    // meggase : 'Nothing to do'
   },
   methods: {
     // L'utente puó inserire nuove tasks
