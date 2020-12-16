@@ -18,7 +18,7 @@ let app = new Vue({
   },
   methods: {
     // L'utente puó inserire nuove tasks
-    addTask: function (){                // funzione associata: pulsante add (button) o taso Enter della tastiera (input).
+    addTask(){                // funzione associata: pulsante add (button) o taso Enter della tastiera (input).
       let newText = this.newTask.trim();        //Remove whitespace from both sides of a string
       if (newText){
         this.tasks.push({ text: newText });     //Add a new item to the end of an array:
@@ -26,8 +26,8 @@ let app = new Vue({
       }
     },
     // Cliccando sulla "X" l'utente puó cancellare una task
-    removeTask: function (index){
-      this.tasks.splice(index,1);               //Removes items from an array, and returns the removed item(s).
+    removeTask(index){
+      this.$delete(this.tasks, index);
     }
   }
 })

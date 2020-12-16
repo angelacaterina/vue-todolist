@@ -23,10 +23,10 @@
         <button type="button" name="button" @click="addTask">Add</button>
       </div>
       <ul>
-        <li v-for="task in tasks">
-          <span>{{ task.text }}</span>
+        <li v-for="task, index in tasks">
+          <span>{{ task.text}}</span>
           <!-- // Cliccando sulla "X" l'utente puó cancellare una task -->
-          <i class="fas fa-times-circle" @click="removeTask"></i>
+          <span @click="removeTask(index)"><i class="fas fa-times-circle" ></i></span>
         </li>
       </ul>
     </div>
