@@ -12,6 +12,12 @@
 let app = new Vue({
   el:'#app',
   data:{
-    image : "https://www.boolean.careers/images/misc/logo.png"
+    image : "https://www.boolean.careers/images/misc/logo.png",
+    newTask: '',
+    tasks: [
+      { text: 'Do somthing' },
+      { text: 'Do else' },
+      { text: 'Do somthing else' }
+    ]
   }
 });
