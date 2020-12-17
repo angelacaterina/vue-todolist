@@ -16,7 +16,7 @@ let app = new Vue({
       { text: 'Do somthing else' }
     ],
     // Se non ci sono piu task nella lista, mostrate un messaggio tipo "Nulla da fare"
-    // meggase : 'Nothing to do'
+    meggase : 'Nothing to do'
   },
   methods: {
     // L'utente puó inserire nuove tasks

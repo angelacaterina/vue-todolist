@@ -21,16 +21,16 @@
         <button type="button" name="button" @click="addTask">Add</button>
       </div>
       <h3>Todo List</h3>
-      <ul>
+
+      <ul v-if="tasks.length > 0">
         <li v-for="task, index in tasks">
           <span>{{ task.text}}</span>
           <!-- // Cliccando sulla "X" l'utente puó cancellare una task -->
           <span @click="removeTask(index)"><i class="fas fa-times-circle" ></i></span>
         </li>
       </ul>
-
-    <!-- <p> {{meggase}}</p> -->
-
+      <!-- // Se non ci sono piu task nella lista, mostrate un messaggio tipo "Nulla da fare" -->
+      <p v-else> {{meggase}}</p>
     </div>
 
 
