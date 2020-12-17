@@ -2,8 +2,6 @@
 // Create una todo list usando VueJS.
 
 // Funzionalitá:
-// Attenzione: l'utente non deve inserire tasks vuote ma almeno un tot di caratteri.
-
 let app = new Vue({
   el:'#app',
   data:{
@@ -22,7 +20,8 @@ let app = new Vue({
     // L'utente puó inserire nuove tasks
     addTask(){                // funzione associata: pulsante add (button) o taso Enter della tastiera (input).
       let newText = this.newTask.trim();        //Remove whitespace from both sides of a string
-      if (newText){
+      // L'utente non deve inserire tasks vuote ma almeno un tot di caratteri.
+      if (newText.length >= 4){                 //Return the length of the characters
         this.tasks.push({ text: newText });     //Add a new item to the end of an array:
         this.newTask = '';
       }
